@@ -1,72 +1,66 @@
-# job-board-application-api
-command for database.
-Php artisan migrate.
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-1. User Authentication
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-Register a New User
-URL: http://127.0.0.1:8000/api/register
-Method: POST
-Description: Registers a new user and returns an API token.
+## About Laravel
 
-Login
-URL: http://127.0.0.1:8000/api/login
-Method: POST
-Description: Authenticates a user and returns an API token.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-Logout
-URL: http://127.0.0.1:8000/api/logout
-Method: POST
-Description: Logs out the authenticated user and revokes the API token.
-Requires Authentication: Yes
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-Authentication is required using a token to access the API.
-2. Job Listings
+## Learning Laravel
 
-List All Jobs
-URL: http://127.0.0.1:8000/api/jobs
-Method: GET
-Description: Retrieves a list of all job listings.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-Create a Job
-URL: http://127.0.0.1:8000/api/jobs
-Method: POST
-Description: Creates a new job listing.
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-View a Specific Job
-URL: http://127.0.0.1:8000/api/jobs/{jobID}
-Method: GET
-Description: Retrieves details of a specific job by its ID.
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-Update a Job
-URL: http://127.0.0.1:8000/api/jobs/{jobID}
-Method: PUT
-Description: Updates an existing job listing.
+## Laravel Sponsors
 
-Delete a Job
-URL: http://127.0.0.1:8000/api/jobs/{jobID}
-Method: DELETE
-Description: Deletes a job listing.
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
+### Premium Partners
 
-3. Job Applications
-   
-Apply for a Job
-URL: http://127.0.0.1:8000/api/jobs/{jobID}/apply
-Method: POST
-Description: Allows a user to apply for a specific job.
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
 
-List Job Applications
-URL: http://127.0.0.1:8000/api/jobs/{jobID}/applications
-Method: GET
-Description: Retrieves a list of applications for a specific job.
+## Contributing
 
-4. Bonus Feature: Job Search
-Search for Jobs
-URL: http://127.0.0.1:8000/api/jobs/search
-Method: GET
-Description: Searches for jobs by title or location.
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
+## Code of Conduct
 
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
