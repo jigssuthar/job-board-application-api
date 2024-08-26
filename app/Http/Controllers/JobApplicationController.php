@@ -22,7 +22,10 @@ class JobApplicationController extends Controller
             'cover_letter' => $request->cover_letter,
         ]);
 
-        return new JobApplicationResource($jobApplication);
+       return response()->json([
+            'message' => 'Job application submit successfully.',
+            'job-application' => new JobApplicationResource($jobApplication)
+        ], 201);
     }
 
     public function index($jobId)
