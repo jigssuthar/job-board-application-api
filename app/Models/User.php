@@ -35,7 +35,12 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
+ 
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
+    
     /**
      * The attributes that should be cast.
      *
