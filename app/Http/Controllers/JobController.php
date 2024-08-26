@@ -27,7 +27,10 @@ class JobController extends Controller
 
         $job = Auth::user()->jobs()->create($request->all());
 
-        return new JobResource($job);
+        return response()->json([
+            'message' => 'Job created successfully.',
+            'job' => new JobResource($job)
+        ], 201);
     }
 
     public function show(Job $job)
@@ -38,7 +41,6 @@ class JobController extends Controller
     public function update(Request $request, Job $job)
     {
         $this->authorize('update', $job);
-
         $request->validate([
             'title' => 'string|max:255',
             'description' => 'string',
@@ -46,34 +48,33 @@ class JobController extends Controller
             'location' => 'string|max:255',
             'salary' => 'nullable|numeric',
         ]);
-
         $job->update($request->all());
 
-        return new JobResource($job);
+       return response()->json([
+            'message' => 'Job updated successfully.',
+            'job' => new JobResource($job)
+        ], 201);
     }
 
     public function destroy(Job $job)
     {
         $this->authorize('delete', $job);
-
         $job->delete();
-
-        return response()->noContent();
+        return response()->json([
+            'message' => 'Job deleted successfully.',
+        ], 201);
     }
+    
     public function search(Request $request)
     {
         $query = Job::query();
-
         if ($request->has('title')) {
             $query->where('title', 'LIKE', '%' . $request->input('title') . '%');
         }
-
         if ($request->has('location')) {
             $query->where('location', 'LIKE', '%' . $request->input('location') . '%');
         }
-
         $jobs = $query->get();
-
         return JobResource::collection($jobs);
     }
 }
